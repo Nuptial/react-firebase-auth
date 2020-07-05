@@ -9,7 +9,7 @@ const Card = (props) => {
 
     setInterval(() => {
       fetchData();
-    }, 7500);
+    }, 1000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
