@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./card.css";
 
+import { withFirebase } from "../../components/Firebase/context";
+
 const Card = (props) => {
   const [value, setValue] = useState(0);
 
@@ -18,7 +20,15 @@ const Card = (props) => {
   }, []);
 
   const fetchData = () => {
-    fetch(props.endpoint)
+    const myHeaders = new Headers();
+
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", localStorage.getItem("idToken"));
+
+    fetch(props.endpoint, {
+      method: "GET",
+      headers: myHeaders,
+    })
       .then((response) => response.json())
       .then((data) => {
         const result = Number(Object.values(data.payload));
@@ -51,4 +61,4 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+export default withFirebase(Card);

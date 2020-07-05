@@ -23,7 +23,10 @@ class Firebase {
   signIn = (email, password) =>
     this.auth.signInWithEmailAndPassword(email, password);
 
-  signOut = () => this.auth.signOut();
+  signOut = () => {
+    localStorage.removeItem("idToken");
+    this.auth.signOut();
+  };
 }
 
 export default Firebase;

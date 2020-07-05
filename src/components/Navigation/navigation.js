@@ -15,8 +15,12 @@ const Navigation = ({ firebase, history }) => {
   useEffect(() => {
     firebase.auth.onAuthStateChanged((authUser) => {
       if (authUser) {
-        setAuthUser(authUser);
-        history.push(ROUTES.HOME);
+        authUser.getIdToken().then((idToken) => {
+          localStorage.setItem("idToken", idToken);
+          setAuthUser(authUser);
+          history.push(ROUTES.HOME);
+        });
+        
       } else {
         setAuthUser(null);
         history.push(ROUTES.LOGIN);
