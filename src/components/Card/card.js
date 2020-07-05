@@ -18,8 +18,11 @@ const Card = (props) => {
       .then((response) => response.json())
       .then((data) => {
         const result = Number(Object.values(data.payload));
+        const modifiedResult = result % 1 === 0 ? result : result.toFixed(2);
 
-        setValue(result % 1 === 0 ? result : result.toFixed(2));
+        if (value !== modifiedResult) {
+          setValue(modifiedResult);
+        }
       });
   };
 
