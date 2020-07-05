@@ -7,9 +7,13 @@ const Card = (props) => {
   useEffect(() => {
     fetchData();
 
-    setInterval(() => {
+    const fetchDataInterval = setInterval(() => {
       fetchData();
     }, 1000);
+
+    return () => {
+      clearInterval(fetchDataInterval);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
