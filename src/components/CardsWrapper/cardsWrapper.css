@@ -1,0 +1,6 @@
+.cards-wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 20px 20px 0px 20px;
+}
