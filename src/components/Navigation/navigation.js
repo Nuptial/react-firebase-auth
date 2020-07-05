@@ -22,6 +22,7 @@ const Navigation = ({ firebase, history }) => {
         history.push(ROUTES.LOGIN);
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

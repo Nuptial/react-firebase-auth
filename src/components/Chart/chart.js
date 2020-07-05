@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import "./chart.css";
 import Chart from "chart.js";
 
@@ -10,19 +10,21 @@ const ShowChart = (props) => {
       .then((response) => response.json())
       .then((data) => {
         const result = Object.values(data.payload)[0];
-        const labels = [];
-        const values = [];
+        let labels = [];
+        let values = [];
         const datePattern = /(\d{4})(\d{1,2})(\d{1,2})/;
         
         Object.keys(result).map((res) => {
           values.push(result[res]);
-          return labels.push(
+          labels.push(
             datePattern.exec(res)[1] +
               "-" +
               datePattern.exec(res)[2] +
               "-" +
               datePattern.exec(res)[3]
           );
+
+          return null;
         });
 
         const config = {

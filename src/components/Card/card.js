@@ -10,6 +10,7 @@ const Card = (props) => {
     setInterval(() => {
       fetchData();
     }, 7500);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchData = () => {
@@ -18,11 +19,7 @@ const Card = (props) => {
       .then((data) => {
         const result = Number(Object.values(data.payload));
 
-        setValue(
-          result % 1 === 0
-            ? result
-            : result.toFixed(2)
-        );
+        setValue(result % 1 === 0 ? result : result.toFixed(2));
       });
   };
 
