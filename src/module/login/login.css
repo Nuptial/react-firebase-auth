@@ -7,8 +7,8 @@
 }
 
 .login-logo {
-  width: 500px;
-  height: 250px;
+  width: 300px;
+  height: 150px;
   margin-bottom: 100px;
 }
 
@@ -24,7 +24,7 @@ input {
   outline: none;
   border: 1px solid #313257;
   box-sizing: border-box;
-  height: 50px;
+  height: 60px;
   text-align:center;
   color: #40434d;
   background: transparent;
@@ -36,7 +36,7 @@ input {
 .login-button {
   width: 300px;
   line-height: 50px;
-  height: 50px;
+  height: 60px;
   margin-top: 10px;
   margin-bottom: 10px;
   color: white;

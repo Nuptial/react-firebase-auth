@@ -45,16 +45,22 @@ const ShowChart = (props) => {
   };
 
   const initializeChart = (values, labels) => {
-    const config = {
+        var ctx = canvasEl.current.getContext("2d");
+        var gradientFill = ctx.createLinearGradient(0, 300, 0, 0);
+        gradientFill.addColorStop(0, "rgba(0, 0, 0, 0)");
+        gradientFill.addColorStop(1, "rgb(115,68,166)");
+
+        const config = {
           type: "line",
           data: {
             labels,
             datasets: [
               {
-                label: "adsasf",
+                label: "Value",
                 data: values,
                 borderColor: "#7344a6",
-                fill: false,
+                fill: true,
+                backgroundColor: gradientFill,
               },
             ],
           },
@@ -78,8 +84,6 @@ const ShowChart = (props) => {
             maintainAspectRatio: false,
           },
         };
-
-        var ctx = canvasEl.current.getContext("2d");
 
         new Chart(ctx, config);
   };

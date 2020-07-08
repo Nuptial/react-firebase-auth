@@ -26,6 +26,14 @@ const Navigation = ({ firebase, history }) => {
         history.push(ROUTES.LOGIN);
       }
     });
+
+    firebase.auth.onIdTokenChanged(user => {
+      if (user) {
+        user.getIdToken(true).then((idToken) => {
+          localStorage.setItem("idToken", idToken);
+        });
+      }
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

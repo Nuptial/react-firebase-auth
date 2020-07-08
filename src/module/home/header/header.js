@@ -10,7 +10,7 @@ const Header = (props) => {
       <img src="/hedwig-logo.png" className="logo" alt="logo" />
       <div className="logout">
         <i className="fa fa-user fa-2x"></i>
-        <i className="fa fa-arrow-down" aria-hidden="true"></i>
+        <i className="fa fa-caret-down" aria-hidden="true"></i>
         <div
           className="logout-container"
           onClick={props.firebase.signOut}
