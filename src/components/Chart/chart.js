@@ -48,7 +48,7 @@ const ShowChart = (props) => {
         var ctx = canvasEl.current.getContext("2d");
         var gradientFill = ctx.createLinearGradient(0, 300, 0, 0);
         gradientFill.addColorStop(0, "rgba(0, 0, 0, 0)");
-        gradientFill.addColorStop(1, "rgb(115,68,166)");
+        gradientFill.addColorStop(1, "rgba(190, 85, 237, .2)");
 
         const config = {
           type: "line",
@@ -58,7 +58,7 @@ const ShowChart = (props) => {
               {
                 label: "Value",
                 data: values,
-                borderColor: "#7344a6",
+                borderColor: "#be55ed",
                 fill: true,
                 backgroundColor: gradientFill,
               },

@@ -8,11 +8,12 @@
 }
 
 .title {
-  color: #858588;
+  color: #e6e6e9;
   font-size: 24px;
   margin-bottom: 20px;
 }
 
 .title i {
   margin-right: 15px;
+  color: #be55ed;
 }
